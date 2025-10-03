@@ -1,0 +1,17 @@
+_format_version: "3.0"
+services:
+- name: foo
+  enabled: true
+  host: httpbin.konghq.com
+  routes:
+  - name: foo
+    https_redirect_status_code: 426    
+    path_handling: v0
+    paths:
+    - /foo
+    preserve_host: false
+    regex_priority: 0
+    request_buffering: true
+    response_buffering: true
+    strip_path: true
+  write_timeout: 60000
